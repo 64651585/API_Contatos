@@ -1,0 +1,245 @@
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <top (required)> at /home/eduardo/Projetos Ruby/Contacts/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <top (required)> at /home/eduardo/Projetos Ruby/Contacts/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <top (required)> at /home/eduardo/Projetos Ruby/Contacts/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <top (required)> at /home/eduardo/Projetos Ruby/Contacts/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <top (required)> at /home/eduardo/Projetos Ruby/Contacts/bin/rails:5)
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (160.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (144.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20210421065147)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (12.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210421065147"]]
+  [1m[36mTRANSACTION (107.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToUser (20210421065249)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (15.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210421065249"]]
+  [1m[36mTRANSACTION (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-21 06:53:45.636503"], ["updated_at", "2021-04-21 06:53:45.636503"]]
+  [1m[36mTRANSACTION (74.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAuthenticationTokenToUsers (20210421070120)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.9ms)[0m  [1m[35mALTER TABLE "users" ADD "authentication_token" varchar(30)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (10.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210421070120"]]
+  [1m[36mTRANSACTION (128.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eduardokarans@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "caVwqmu7PiX9ypWtsb4c"]]
+  [1m[36mUser Create (10.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "authentication_token") VALUES (?, ?, ?, ?, ?)[0m  [["email", "eduardokarans@gmail.com"], ["encrypted_password", "$2a$12$OPlqcruaxTPSJ.ziMHlTXeDqbI8p7pzbHGZAzLmRjySXiJNi0RkAW"], ["created_at", "2021-04-21 07:11:17.481307"], ["updated_at", "2021-04-21 07:11:17.481307"], ["authentication_token", "caVwqmu7PiX9ypWtsb4c"]]
+  [1m[36mTRANSACTION (157.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20210421175512)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "description" text, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_8d2134e55e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_contacts_on_user_id" ON "contacts" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210421175512"]]
+  [1m[36mTRANSACTION (124.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/contacts" for ::1 at 2021-04-21 15:39:18 -0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 15:39:49 -0300
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+  [1m[35m (126.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (23.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eduardokarans@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 15:49:21 -0300
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 15:50:07 -0300
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 15:50:50 -0300
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 15:51:26 -0300
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started POST "/api/v1/contacts.json" for ::1 at 2021-04-21 15:55:13 -0300
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started POST "/api/v1/contacts.json" for ::1 at 2021-04-21 15:59:11 -0300
+  
+NoMethodError (undefined method `acts_as_token_authenticatable_handler_for' for Api::V1::ApiController:Class
+Did you mean?  acts_as_token_authentication_handler_for
+               acts_as_token_authentication_handler):
+  
+app/controllers/api/v1/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api/v1/api_controller.rb:2:in `<module:V1>'
+app/controllers/api/v1/api_controller.rb:1:in `<top (required)>'
+app/controllers/api/v1/contacts_controller.rb:1:in `<top (required)>'
+Started POST "/api/v1/contacts.json" for ::1 at 2021-04-21 16:02:18 -0300
+Processing by Api::V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{"name"=>"eduardo", "email"=>"eduardo@gmail.com"}}
+Completed 401 Unauthorized in 193ms (Allocations: 1037)
+
+
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (25.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eduardokarans@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/v1/contacts.json" for ::1 at 2021-04-21 16:04:29 -0300
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{"name"=>"eduardo", "email"=>"eduardo@gmail.com"}}
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms | Allocations: 1038)
+
+
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (53.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "k9fYZjsNh1igV5zgZE4h"]]
+  [1m[36mUser Create (76.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "authentication_token") VALUES (?, ?, ?, ?, ?)[0m  [["email", "maria@gmail.com"], ["encrypted_password", "$2a$12$nT9r6IOCqKmabJRio0368.R7SQHiNAnnRz13LxHNvzNDJ8vIp8/Fe"], ["created_at", "2021-04-21 19:09:28.277653"], ["updated_at", "2021-04-21 19:09:28.277653"], ["authentication_token", "k9fYZjsNh1igV5zgZE4h"]]
+  [1m[36mTRANSACTION (334.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 16:14:16 -0300
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{"name"=>"eduardo", "email"=>"eduardo@gmail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:13:in `index'
+Completed 200 OK in 411ms (Views: 49.5ms | ActiveRecord: 5.8ms | Allocations: 20338)
+
+
+Started POST "/api/v1/contacts.json" for ::1 at 2021-04-21 16:17:21 -0300
+Processing by Api::V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{"name"=>"eduardo", "email"=>"eduardo@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:31:in `create'
+  [1m[36mContact Create (130.0ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "eduardo"], ["email", "eduardo@gmail.com"], ["user_id", 2], ["created_at", "2021-04-21 19:17:21.863890"], ["updated_at", "2021-04-21 19:17:21.863890"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (1351.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:31:in `create'
+Completed 201 Created in 1948ms (Views: 1.1ms | ActiveRecord: 1483.7ms | Allocations: 12687)
+
+
+Started POST "/api/v1/contacts.json" for ::1 at 2021-04-21 16:23:53 -0300
+Processing by Api::V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{"name"=>"maria", "email"=>"maria@gmail.com"}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:31:in `create'
+  [1m[36mContact Create (1.0ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "maria"], ["email", "maria@gmail.com"], ["user_id", 2], ["created_at", "2021-04-21 19:23:53.087021"], ["updated_at", "2021-04-21 19:23:53.087021"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (454.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:31:in `create'
+Completed 201 Created in 528ms (Views: 4.7ms | ActiveRecord: 462.6ms | Allocations: 6308)
+
+
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 16:24:02 -0300
+Processing by Api::V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{"name"=>"maria", "email"=>"maria@gmail.com"}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:13:in `index'
+Completed 200 OK in 44ms (Views: 15.9ms | ActiveRecord: 3.9ms | Allocations: 2153)
+
+
+Started DELETE "/api/v1/contacts/2" for ::1 at 2021-04-21 16:24:26 -0300
+Processing by Api::V1::ContactsController#destroy as */*
+  Parameters: {"contact"=>{"name"=>"maria", "email"=>"maria@gmail.com"}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:73:in `set_contact'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:87:in `require_authorization!'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:63:in `destroy'
+  [1m[36mContact Destroy (7.0ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:63:in `destroy'
+  [1m[36mTRANSACTION (1469.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:63:in `destroy'
+Completed 204 No Content in 1553ms (ActiveRecord: 1478.1ms | Allocations: 6253)
+
+
+Started GET "/api/v1/contacts.json" for ::1 at 2021-04-21 16:24:40 -0300
+Processing by Api::V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{"name"=>"maria", "email"=>"maria@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maria@gmail.com"], ["LIMIT", 1]]
+  [1m[36mContact Load (5.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:13:in `index'
+Completed 200 OK in 71ms (Views: 39.6ms | ActiveRecord: 5.6ms | Allocations: 1945)
+
+
